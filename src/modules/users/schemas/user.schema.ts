@@ -1,3 +1,4 @@
+// src/modules/users/schemas/user.schema.ts
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
@@ -12,25 +13,25 @@ export class User {
   email: string;
 
   @Prop()
-  phone: string;
+  phone?: string;
 
   @Prop({ required: true })
   passwordHash: string;
 
-  @Prop({ required: true })
-  dateOfBirth: Date;
+  @Prop()
+  dateOfBirth?: Date;
 
   @Prop()
-  city: string;
+  city?: string;
 
   @Prop()
-  language: string;
+  language?: string;
 
   @Prop({ default: 0 })
-  DeciCoins: number;
+  deciCoins: number;
 
   @Prop({ type: Object, default: {} })
-  preferences: Record<string, any>;
+  metadata: Record<string, unknown>;
 
   @Prop({ type: [String], default: [] })
   favoritePlaces: string[];
