@@ -6,6 +6,10 @@ import { RedisModule } from './config/redis';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ThrottlerModule, ThrottlerModuleOptions } from '@nestjs/throttler';
+import { CompaniesModule } from './modules/companies/companies.module';
+import { DecideModule } from './modules/decide/decide.module';
+import { VisitsModule } from './modules/visits/visits.module';
+import { OffersModule } from './modules/offers/offers.module';
 
 @Module({
   imports: [
@@ -35,6 +39,10 @@ import { ThrottlerModule, ThrottlerModuleOptions } from '@nestjs/throttler';
     RedisModule,
     UsersModule,
     AuthModule,
+    CompaniesModule,
+    DecideModule,
+    VisitsModule,
+    OffersModule,
   ],
 })
 export class AppModule {}
