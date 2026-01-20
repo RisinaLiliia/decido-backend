@@ -9,17 +9,21 @@ import { hashPassword } from '../../utils/password';
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
-  async findAll(): Promise<User[]> {
+  async findAll(): Promise<UserDocument[]> {
     return this.userModel.find().exec();
   }
 
-  async findOne(id: string): Promise<User> {
+  async findOne(id: string): Promise<UserDocument> {
     const user = await this.userModel.findById(id).exec();
     if (!user) throw new NotFoundException('User not found');
     return user;
   }
 
-  async create(dto: CreateUserDto): Promise<User> {
+  async findByEmail(email: string): Promise<UserDocument | null> {
+    return this.userModel.findOne({ email }).exec();
+  }
+
+  async create(dto: CreateUserDto): Promise<UserDocument> {
     const hash = await hashPassword(dto.password);
     const user = new this.userModel({
       name: dto.name,
@@ -27,5 +31,11 @@ export class UsersService {
       passwordHash: hash,
     });
     return user.save();
+  }
+
+  async updateRefreshToken(userId: string, hash: string): Promise<void> {
+    await this.userModel
+      .findByIdAndUpdate(userId, { refreshTokenHash: hash })
+      .exec();
   }
 }
