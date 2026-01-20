@@ -5,6 +5,8 @@ import helmet from 'helmet';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
+import { RolesGuard } from './modules/auth/guards/roles.guard';
+import { Reflector } from '@nestjs/core';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -16,6 +18,8 @@ async function bootstrap() {
     origin: config.get<string[]>('app.allowedOrigins'),
     credentials: true,
   });
+
+  app.useGlobalGuards(new RolesGuard(app.get(Reflector)));
 
   app.useGlobalPipes(
     new ValidationPipe({
