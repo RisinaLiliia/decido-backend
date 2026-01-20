@@ -38,6 +38,49 @@ export class User {
 
   @Prop({ type: [String], default: [] })
   friends: string[];
+
+  @Prop({
+    type: {
+      foodType: [String],
+      noiseLevel: { type: String, enum: ['low', 'medium', 'high'] },
+      budget: { type: String, enum: ['low', 'medium', 'high'] },
+      favoriteCompanies: [String],
+    },
+    default: {},
+  })
+  preferences: {
+    foodType?: string[];
+    noiseLevel?: 'low' | 'medium' | 'high';
+    budget?: 'low' | 'medium' | 'high';
+    favoriteCompanies?: string[];
+  };
+
+  @Prop({ type: [Date], default: [] })
+  birthdays: Date[];
+
+  @Prop({
+    type: [
+      {
+        visitId: String,
+        companyId: String,
+        rating: Number,
+        date: Date,
+      },
+    ],
+    default: [],
+  })
+  history: {
+    visitId: string;
+    companyId: string;
+    rating: number;
+    date: Date;
+  }[];
+
+  @Prop({ default: 'user' })
+  role: 'user' | 'business' | 'admin';
+
+  @Prop()
+  refreshTokenHash?: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
