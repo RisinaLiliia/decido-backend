@@ -39,6 +39,12 @@ export class User {
   @Prop({ type: [String], default: [] })
   friends: string[];
 
+  @Prop({ required: true })
+  acceptedPrivacyPolicy: boolean;
+
+  @Prop({ default: null })
+  acceptedPrivacyPolicyAt?: Date;
+
   @Prop({
     type: {
       foodType: [String],
@@ -79,8 +85,30 @@ export class User {
   @Prop({ default: 'user' })
   role: 'user' | 'business' | 'admin';
 
+  @Prop({
+    type: String,
+    enum: ['Novice', 'Explorer', 'Navigator', 'Expert', 'Legend'],
+    default: 'Novice',
+  })
+  level: 'Novice' | 'Explorer' | 'Navigator' | 'Expert' | 'Legend';
+
   @Prop()
   refreshTokenHash?: string;
+
+  @Prop({
+    type: {
+      url: String,
+      isDefault: Boolean,
+    },
+    default: {
+      url: '/avatars/default.png',
+      isDefault: true,
+    },
+  })
+  avatar: {
+    url: string;
+    isDefault: boolean;
+  };
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
