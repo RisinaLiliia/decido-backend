@@ -1,98 +1,206 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Decidе Backend (Portfolio Version)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+**Node.js + NestJS + TypeScript Backend for Decidе App**
 
-## Description
+This repository contains the backend of **Decidе**, a web and mobile application designed to deliver fast, personalized recommendations.
+This version highlights the **technology, architecture, and development skills**, without exposing proprietary business logic or algorithms.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Architecture](#architecture)
+5. [Database](#database)
+6. [Authentication & Authorization](#authentication--authorization)
+7. [Search & Recommendations](#search--recommendations)
+8. [Payments & Integrations](#payments--integrations)
+9. [Deployment & Infrastructure](#deployment--infrastructure)
+10. [Monitoring & Logging](#monitoring--logging)
+11. [Getting Started](#getting-started)
+12. [Contributing](#contributing)
+13. [License](#license)
+
+---
+
+## Project Overview
+
+Decidе is a **web and mobile app** that helps users make decisions quickly.
+This portfolio version focuses on **backend development, system architecture, and integrations** rather than proprietary recommendation logic.
+
+**Target Audience:**
+
+* Users: general audience interested in food, entertainment, tourism
+* Businesses: restaurants, cafes, bars, entertainment venues
+
+**Core Skills Demonstrated:**
+
+* Backend architecture and modular design
+* API development (REST/GraphQL)
+* Database management and caching
+* Integration with third-party services (maps, payments, OAuth)
+
+---
+
+## Features
+
+* **User management:** registration, login, role-based access control
+* **Content management:** businesses can manage venues, promotions, and analytics
+* **Search & filtering:** fast, scalable search via Elasticsearch/OpenSearch
+* **Geolocation support:** map integration and geo-queries
+* **Payments:** integration with Stripe, PayPal, Paddle
+* **Personalization framework:** backend structure ready for future recommendation logic
+
+> Note: Proprietary recommendation algorithms are not included in this public version.
+
+---
+
+## Tech Stack
+
+**Backend:**
+
+* Node.js + NestJS + TypeScript
+* MongoDB (user profiles, venues, reviews)
+* Redis (cache, sessions, counters)
+* PostgreSQL (transactions, subscriptions)
+* Elasticsearch / OpenSearch (search & filtering)
+
+**Frontend / Mobile (integrated):**
+
+* Next.js + React + TypeScript + Tailwind CSS
+* React Native + TypeScript
+
+**Infrastructure:**
+
+* Docker
+* CI/CD: GitHub Actions
+* Hosting: Vercel (frontend), Railway / AWS / GCP (backend)
+
+**Other Integrations:**
+
+* OAuth (Google, Apple)
+* Google Maps API / Mapbox
+* Stripe / PayPal / Paddle
+
+---
+
+## Architecture
+
+* Modular backend with NestJS
+* Ready for microservices and horizontal scaling
+* REST APIs (GraphQL optional)
+* JSON data format
+* Scalable caching and task queues
+
+---
+
+## Database
+
+* **MongoDB:** flexible schemas for user profiles, venues, reviews
+* **PostgreSQL:** structured, reliable storage for transactions and subscriptions
+* **Redis:** caching, session management, real-time counters
+
+---
+
+## Authentication & Authorization
+
+* JWT + Refresh token system
+* OAuth login (Google, Apple)
+* Role-based access control (User / Business / Admin)
+
+---
+
+## Search & Recommendations
+
+* Elasticsearch/OpenSearch for fast venue search
+* Filtered queries and scoring framework ready for future algorithms
+
+> Algorithm logic is proprietary and **not included** in this portfolio version.
+
+---
+
+## Payments & Integrations
+
+* Stripe, PayPal, Paddle integration
+* Subscription management
+* Third-party API integration for maps and payments
+
+---
+
+## Deployment & Infrastructure
+
+* Containerized with Docker
+* Backend hosted on Railway / AWS / GCP
+* Frontend on Vercel
+* CI/CD via GitHub Actions
+* Designed for scalability and performance
+
+---
+
+## Monitoring & Logging
+
+* Sentry for error tracking
+* Prometheus + Grafana for metrics
+* Optional tools for user behavior analytics (LogRocket / PostHog)
+
+---
+
+## Getting Started
+
+1. Clone the repository:
 
 ```bash
-$ npm install
+git clone https://github.com/yourusername/decide-backend.git
+cd decide-backend
 ```
 
-## Compile and run the project
+2. Install dependencies:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
 
-## Run tests
+3. Configure environment variables in `.env`
+
+4. Run in development mode:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm run start:dev
 ```
 
-## Deployment
+---
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## Contributing
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+1. Fork the repository
+2. Create a new branch (`feature/your-feature`)
+3. Commit your changes
+4. Open a Pull Request
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+---
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This project is licensed under the **MIT License**.
+
+```text
+MIT License
+
+Copyright (c) 2026 Liliia Risina
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+[Full MIT license text here]
+```
+
+---
+
+
