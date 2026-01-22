@@ -18,6 +18,21 @@ export enum CompanyCategory {
   TOUR = 'tour',
 }
 
+export class GeoDto {
+  @IsString()
+  @IsIn(['Point'])
+  type: 'Point';
+
+  @IsArray()
+  coordinates: [number, number];
+}
+
+export class WorkingHourDto {
+  @IsString() day: string;
+  @IsString() open: string;
+  @IsString() close: string;
+}
+
 export class CreateCompanyDto {
   @IsString()
   name: string;
@@ -43,19 +58,4 @@ export class CreateCompanyDto {
   @IsOptional()
   @IsNumber()
   averagePrice?: number;
-}
-
-export class GeoDto {
-  @IsString()
-  @IsIn(['Point'])
-  type: 'Point';
-
-  @IsArray()
-  coordinates: [number, number];
-}
-
-export class WorkingHourDto {
-  @IsString() day: string;
-  @IsString() open: string;
-  @IsString() close: string;
 }

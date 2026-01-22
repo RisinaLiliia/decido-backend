@@ -1,3 +1,5 @@
+// src/modules/decide/decide.controller.ts
+
 import { Controller, Post, Body } from '@nestjs/common';
 import { DecideService } from './decide.service';
 
@@ -7,7 +9,12 @@ export class DecideController {
 
   @Post('now')
   decideNow(
-    @Body() filters: { budget?: string; category?: string; city?: string },
+    @Body()
+    filters: {
+      budget?: number;
+      category?: string;
+      city?: string;
+    },
   ) {
     return this.decideService.decideNow(filters);
   }
@@ -17,7 +24,7 @@ export class DecideController {
     @Body()
     filters: {
       date: Date;
-      budget?: string;
+      budget?: number;
       category?: string;
       city?: string;
     },
