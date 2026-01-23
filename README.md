@@ -173,6 +173,21 @@ npm run start:dev
 
 ---
 
+## API Documentation
+
+This project uses **Swagger (OpenAPI)** for interactive API documentation.
+
+**Swagger UI** is available only in development mode:
+
+```
+http://localhost:3000/docs
+```
+
+> Swagger is disabled in production for security reasons.
+
+---
+
+
 ## Contributing
 
 1. Fork the repository

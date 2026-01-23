@@ -21,7 +21,6 @@ type RedisClient = SimpleRedisClient;
       provide: 'REDIS_CLIENT',
       inject: [ConfigService],
       useFactory: async (config: ConfigService): Promise<RedisClient> => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         const client = createClient({
           socket: {
             host: String(config.get('APP_REDIS_HOST') ?? '127.0.0.1'),
