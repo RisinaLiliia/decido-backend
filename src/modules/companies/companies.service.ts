@@ -91,7 +91,6 @@ export class CompaniesService {
     );
   }
 
-  // 🔥 РЕЖИМ "СЕЙЧАС"
   async decideNow(params: {
     category?: string;
     city?: string;
